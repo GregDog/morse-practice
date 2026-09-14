@@ -11,6 +11,29 @@ html[data-theme="light"]{--bg:#eef2f6;--panel:#fff;--panel2:#f6f8fb;--panel3:#ff
 *{box-sizing:border-box}html,body{min-height:100%}body{margin:0;min-height:100vh;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:radial-gradient(circle at 15% 0%,color-mix(in srgb,var(--accent) 10%,transparent),transparent 32%),var(--bg);color:var(--text)}
 button,input,select,textarea{font:inherit}button{cursor:pointer}.app{width:min(1500px,calc(100% - 24px));max-width:none;margin:0 auto;padding:18px}.topbar{display:flex;align-items:center;justify-content:space-between;gap:18px;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:14px 16px;box-shadow:var(--shadow);margin-bottom:14px}.brand{display:flex;align-items:center;gap:14px;min-width:0}.brand-logo{width:66px;height:66px;border-radius:50%;object-fit:contain;background:#050607;border:1px solid color-mix(in srgb,var(--accent) 45%,var(--line));padding:5px;flex:none}.brand h1{margin:0;font-size:24px;letter-spacing:-.02em}.brand .sub{margin-top:2px;color:var(--muted);font-size:13px;white-space:nowrap}.courtesy{margin-top:5px;color:var(--muted);font-size:12px}.courtesy a,.footer a,.header-links a{color:var(--accent2);text-decoration:none;font-weight:700}.courtesy a:hover,.footer a:hover,.header-links a:hover{text-decoration:underline}.footer-member-link:hover{text-decoration:none!important}.header-links{margin-top:5px;display:flex;gap:10px;flex-wrap:wrap;font-size:12px}.top-controls{display:flex;gap:14px;align-items:center;flex-wrap:wrap;justify-content:flex-end}.compact-control{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:12px}.pill-switch{width:48px;height:27px;padding:0;border-radius:999px;border:1px solid var(--line);background:var(--panel2);position:relative}.pill-switch::after{content:"";position:absolute;top:3px;left:3px;width:19px;height:19px;border-radius:50%;background:var(--accent);transition:.18s}.pill-switch.on::after{left:24px}.lang-btn{border:1px solid var(--line);background:var(--panel2);color:var(--text);border-radius:999px;padding:6px 10px;font-size:11px;font-weight:800}.layout{display:grid;grid-template-columns:300px minmax(0,1fr);gap:14px;align-items:start}.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow)}.config{padding:15px;position:sticky;top:12px}.section-title{margin:0 0 12px;font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--accent2)}.field{margin-bottom:16px}.field:last-child{margin-bottom:0}.field-head{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:7px;min-width:0}.field label{font-size:12px;font-weight:700;min-width:0}.value{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}select,input[type="text"],textarea{width:100%;border:1px solid var(--line);border-radius:10px;background:var(--panel2);color:var(--text)}input[type="text"]{padding:10px 11px}input[type="range"]{width:100%;accent-color:var(--accent)}.segmented{display:grid;grid-template-columns:repeat(2,1fr);gap:7px}.seg-btn{border:1px solid var(--line);background:var(--panel2);color:var(--text);border-radius:9px;padding:9px 6px;font-size:12px;font-weight:700}.seg-btn.active{background:var(--accent);color:#fff;border-color:var(--accent);box-shadow:0 0 0 2px color-mix(in srgb,var(--accent) 18%,transparent)}.preset-row{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-top:8px}.preset{padding:7px 2px;border-radius:8px;border:1px solid var(--line);background:var(--panel2);color:var(--text);font-size:11px;font-weight:700}.preset:hover{border-color:var(--accent)}.switchline{display:flex;align-items:center;justify-content:space-between;gap:10px}.switch{position:relative;width:43px;height:24px;border-radius:999px;border:1px solid var(--line);background:var(--panel2);flex:none}.switch input{display:none}.switch span{position:absolute;width:17px;height:17px;left:3px;top:50%;transform:translateY(-50%);border-radius:50%;background:var(--muted);transition:left .18s,background .18s}.switch input:checked+span{left:21px;background:var(--accent)}
 .onair-box{margin-top:18px;padding-top:15px;border-top:1px solid var(--line)}
+.cwtv-box{margin-top:18px;padding-top:15px;border-top:1px solid var(--line)}
+.cwtv-head{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.cwtv-label{display:flex;align-items:center;gap:7px;font-size:13px;font-weight:900;letter-spacing:.04em}
+.cwtv-live-dot{width:8px;height:8px;border-radius:50%;background:var(--danger);box-shadow:0 0 10px color-mix(in srgb,var(--danger) 65%,transparent);animation:onAirPulse 1.15s ease-in-out infinite}
+.cwtv-panel{display:none;margin-top:10px}
+.cwtv-panel.open{display:block}
+.cwtv-panel-note{font-size:9px;line-height:1.4;color:var(--muted);margin-bottom:8px}
+.cwtv-youtube-btn{width:100%;display:flex;align-items:center;justify-content:center;gap:7px;text-decoration:none}
+.cwtv-youtube-btn:hover{text-decoration:none!important}
+.cwtv-player-view{background:#030608}
+.cwtv-player-shell{position:absolute;inset:38px 14px 14px;display:flex;flex-direction:column;gap:8px}
+.cwtv-player-frame{position:relative;flex:1;min-height:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#000;box-shadow:0 16px 35px rgba(0,0,0,.26)}
+.cwtv-player-frame iframe{display:block;width:100%;height:100%;border:0;background:#000}
+.cwtv-player-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;color:var(--muted);font-size:9px}
+.cwtv-player-foot strong{color:var(--text)}
+.cwtv-open-youtube{border:1px solid var(--line);border-radius:8px;background:var(--panel2);color:var(--text);padding:6px 10px;font-size:9px;font-weight:900;text-decoration:none;white-space:nowrap}
+.cwtv-open-youtube:hover{border-color:var(--accent);text-decoration:none}
+@media(max-width:620px){
+  .cwtv-player-shell{inset:34px 8px 8px}
+  .cwtv-player-foot{font-size:8px}
+  .cwtv-open-youtube{padding:6px 8px;font-size:8px}
+}
+
 /* Discreet controls inside the keying area */
 .paddle-reverse-control{
   position:absolute;left:12px;top:10px;z-index:7;display:none;align-items:center;gap:7px;
@@ -852,6 +875,7 @@ button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-vis
   }
   .module-order-btn.hide-module{font-size:9px}
   .desktop-modules.customizing .onair-head,
+  .desktop-modules.customizing .cwtv-head,
   .desktop-modules.customizing .invaders-head,
   .desktop-modules.customizing .duel-head,
   .desktop-modules.customizing .cwracer-head,
@@ -869,6 +893,7 @@ button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-vis
 
   /* Slightly tighter left rail without changing the actual module panels. */
   .desktop-modules .onair-box,
+  .desktop-modules .cwtv-box,
   .desktop-modules .listen-box,
   .desktop-modules .invaders-box,
   .desktop-modules .duel-box,
@@ -2258,6 +2283,18 @@ body:has(#visualAidToggle:not(:checked)) #errorsArenaCode{
   </div>
 
 
+  <div class="cwtv-box">
+    <div class="cwtv-head">
+      <div class="cwtv-label"><span class="cwtv-live-dot"></span><span id="cwTvModuleLabel">CW TV</span> <span class="online-badge">LIVE 24/7</span></div>
+      <label class="switch"><input id="cwTvToggle" type="checkbox"><span></span></label>
+    </div>
+    <div id="cwTvPanel" class="cwtv-panel">
+      <div id="cwTvPanelNote" class="cwtv-panel-note">Mirá CW ON TV en directo dentro de Morse Practice.</div>
+      <a id="cwTvSidebarYoutube" class="action cwtv-youtube-btn" href="https://www.youtube.com/live/Bhd8-vvPzFc?si=jS4bK5VGadHEY_k_" target="_blank" rel="noopener noreferrer">▶ YouTube</a>
+    </div>
+  </div>
+
+
   <div class="invaders-box">
     <div class="invaders-head"><div class="invaders-label">👾 CW INVADERS</div><label class="switch"><input id="invadersToggle" type="checkbox"><span></span></label></div>
     <div id="invadersPanel" class="invaders-panel"><div class="invaders-card">
@@ -2685,6 +2722,26 @@ body:has(#visualAidToggle:not(:checked)) #errorsArenaCode{
   <button id="bentWireExit" class="action danger bentwire-exit" type="button">SALIR</button>
 </div>
 <div id="activityArena" class="activity-arena" aria-label="CW training activity">
+  <div id="activityCwTv" class="activity-view cwtv-player-view">
+    <div class="activity-hud">
+      <span><span class="cwtv-live-dot" style="display:inline-block;margin-right:6px"></span><b>CW ON TV</b> · LIVE 24/7</span>
+      <span id="cwTvLangHud">MORSE CODE</span>
+    </div>
+    <div class="cwtv-player-shell">
+      <div class="cwtv-player-frame">
+        <iframe id="cwTvIframe"
+          title="CW ON TV · Live Morse Code 24/7"
+          src="about:blank"
+          allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
+          allowfullscreen
+          referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      </div>
+      <div class="cwtv-player-foot">
+        <span id="cwTvPlayerCaption"><strong>CW ON TV</strong> · Código Morse / Morse Code 24/7</span>
+        <a class="cwtv-open-youtube" href="https://www.youtube.com/live/Bhd8-vvPzFc?si=jS4bK5VGadHEY_k_" target="_blank" rel="noopener noreferrer">ABRIR EN YOUTUBE ↗</a>
+      </div>
+    </div>
+  </div>
   <div id="activityLearn" class="activity-view">
     <div class="activity-hud"><span>🎓 <b>LEARN</b></span><span>⭐ <b id="learnScore">0</b></span></div>
     <div class="activity-center">
@@ -5938,7 +5995,7 @@ function setFor(name){return RACER_SETS[name]||RACER_SETS.letters}
 
 
 function activityArenaShow(kind){
-  const map={learn:'activityLearn',listen:'activityListen',exercises:'activityExercises',koch:'activityKoch',custom:'activityCustom',qso:'activityQso'};
+  const map={cwtv:'activityCwTv',learn:'activityLearn',listen:'activityListen',exercises:'activityExercises',koch:'activityKoch',custom:'activityCustom',qso:'activityQso'};
   document.querySelectorAll('#activityArena .activity-view').forEach(v=>v.classList.remove('active'));
   const id=map[kind],view=id?$(id):null;
   if(view)view.classList.add('active');
@@ -5948,7 +6005,7 @@ function activityArenaShow(kind){
 }
 function activityArenaHide(kind){
   if(kind){
-    const map={learn:'activityLearn',listen:'activityListen',exercises:'activityExercises',koch:'activityKoch',custom:'activityCustom',qso:'activityQso'};
+    const map={cwtv:'activityCwTv',learn:'activityLearn',listen:'activityListen',exercises:'activityExercises',koch:'activityKoch',custom:'activityCustom',qso:'activityQso'};
     const v=$(map[kind]);if(v)v.classList.remove('active');
   }else document.querySelectorAll('#activityArena .activity-view').forEach(v=>v.classList.remove('active'));
   if(!document.querySelector('#activityArena .activity-view.active')){keyarea.classList.remove('activity-active');keyarea.classList.remove('listen-activity')}
@@ -6105,7 +6162,7 @@ function syncTrainingLocks(){
   for(const id of [
     'invadersToggle','battleshipToggle','bentWireToggle',
     'cwRacerToggle','learnToggle','listenToggle','exercisesToggle',
-    'qsoBotToggle','customLessonToggle','kochToggle','cwTimingToggle','cwFlappyToggle'
+    'qsoBotToggle','customLessonToggle','kochToggle','cwTimingToggle','cwFlappyToggle','cwTvToggle'
   ]){
     const t=$(id);
     if(t){
@@ -6164,7 +6221,63 @@ function forceRacerOff(){
   if(typeof forceTimingOnlyOff==='function')forceTimingOnlyOff();
   if(typeof cwFlappyForceOff==='function')cwFlappyForceOff();
 }
+let cwTvOn=false;
+const CW_TV_STREAM_PAGE='https://www.youtube.com/live/Bhd8-vvPzFc?si=jS4bK5VGadHEY_k_';
+const CW_TV_EMBED='https://www.youtube.com/embed/Bhd8-vvPzFc?autoplay=1&playsinline=1&rel=0';
+
+function cwTvApplyLang(){
+  const es=lang==='es';
+  const label=$("cwTvModuleLabel");if(label)label.textContent='CW TV';
+  const note=$("cwTvPanelNote");if(note)note.textContent=es
+    ?'Mirá CW ON TV en directo dentro de Morse Practice.'
+    :'Watch CW ON TV live inside Morse Practice.';
+  const hud=$("cwTvLangHud");if(hud)hud.textContent=es?'CÓDIGO MORSE':'MORSE CODE';
+  const cap=$("cwTvPlayerCaption");if(cap)cap.innerHTML=es
+    ?'<strong>CW ON TV</strong> · Código Morse en directo 24/7'
+    :'<strong>CW ON TV</strong> · Live Morse Code 24/7';
+}
+
+function cwTvLoadPlayer(){
+  const frame=$("cwTvIframe");
+  if(frame&&frame.src!==CW_TV_EMBED)frame.src=CW_TV_EMBED;
+}
+
+function cwTvUnloadPlayer(){
+  const frame=$("cwTvIframe");
+  if(frame)frame.src='about:blank';
+}
+
+function forceCwTvOff(){
+  cwTvOn=false;
+  const t=$("cwTvToggle");if(t)t.checked=false;
+  $("cwTvPanel")?.classList.remove('open');
+  activityArenaHide('cwtv');
+  cwTvUnloadPlayer();
+  syncTrainingLocks();
+}
+
+function setupCwTv(){
+  const t=$("cwTvToggle");if(!t)return;
+  cwTvApplyLang();
+  t.onchange=e=>{
+    cwTvOn=e.target.checked;
+    $("cwTvPanel")?.classList.toggle('open',cwTvOn);
+    if(cwTvOn){
+      closeOtherTraining('cwtv');
+      deactivate();
+      activityArenaShow('cwtv');
+      cwTvApplyLang();
+      cwTvLoadPlayer();
+    }else{
+      activityArenaHide('cwtv');
+      cwTvUnloadPlayer();
+    }
+    syncTrainingLocks();
+  };
+}
+
 function closeOtherTraining(except){
+  if(except!=='cwtv'&&cwTvOn)forceCwTvOff();
   forceOnAirOff();
   forceDuelOff();
   if(except!=='invaders'&&invadersOn)forceInvadersOff();
@@ -6183,6 +6296,7 @@ function closeOtherTraining(except){
 }
 
 function closeAllTrainingForRealtime(){
+  if(cwTvOn)forceCwTvOff();
   if(invadersOn)forceInvadersOff();
   if(typeof battleshipOn!=='undefined'&&battleshipOn)battleForceOff();
   if(typeof bentWireOn!=='undefined'&&bentWireOn)bentWireStop();
@@ -11110,6 +11224,7 @@ cwTimingApplyLang();cwTimingDrawScopeFlat();cwTimingDrawTimeline();
 applyLang();applyAudioOnly();setupCommunity();
 setupRewards();setupDuel();setupInvaders();setupCWFlappy();setupBentWire();setupBattleship();setupStableGlobalStats();connectGlobalStats();updateModeHint();updatePresenceUI();applyVisualAid();syncTrainingLocks();qsoSmartStatus('off');$('charSpacingValue').textContent=charSpacing.value;
 setupChat();
+setupCwTv();
 syncPaddleReverseUI();
 updateOnAirVisual();
 })();
@@ -11126,6 +11241,7 @@ updateOnAirVisual();
   // functions closest to the keying area.
   const defs = [
     {id:'onair',     selector:'.onair-box',        head:'.onair-head',                 title:'ON AIR'},
+    {id:'cwtv',      selector:'.cwtv-box',         head:'.cwtv-head',                  title:'CW TV'},
     {id:'learn',     selector:'.learn-box',        head:'.learn-head',                 title:'LEARN'},
     {id:'listen',    selector:'.listen-box',       head:'.listen-head',                title:'ESCUCHA / LISTEN'},
     {id:'timing',    selector:'.cw-timing-box',    head:'.cw-timing-head',            title:'CW TIMING'},
