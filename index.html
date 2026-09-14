@@ -2276,6 +2276,16 @@ body:has(#visualAidToggle:not(:checked)) #errorsArenaCode{
   <div class="field"><div class="switchline"><div><label for="sidetoneToggle">Sidetone</label><div class="value" data-i18n="oscAudio">Audio del oscilador</div></div><label class="switch"><input id="sidetoneToggle" type="checkbox" checked><span></span></label></div></div><div class="field"><div class="switchline"><div><label for="visualAidToggle" data-i18n="visualAid">Ayuda visual</label><div class="value" data-i18n="visualAidHelp">Mostrar puntos y rayas</div></div><label class="switch"><input id="visualAidToggle" type="checkbox"><span></span></label></div></div><div class="field"><div class="switchline"><div><label for="audioOnlyToggle" data-i18n="audioOnly" data-audio-only-title>Solo audio</label><div class="value" data-i18n="audioOnlyHelp">W para vista rápida</div></div><label class="switch"><input id="audioOnlyToggle" type="checkbox"><span></span></label></div></div>
   <div class="field"><div class="field-head"><label for="charSpacing" data-i18n="charSpacing">Espaciado de caracteres (Farnsworth)</label><span class="value"><span id="charSpacingValue">3</span> dits</span></div><input id="charSpacing" type="range" min="3" max="12" step="1" value="3"></div>
   <div class="field"><div class="field-head"><label for="wordSpacing" data-i18n="wordSpacing">Espaciado de palabras</label><span class="value"><span id="spacingValue">7</span> dits</span></div><input id="wordSpacing" type="range" min="5" max="10" step="1" value="7"></div>
+  <div class="cwtv-box">
+    <div class="cwtv-head">
+      <div class="cwtv-label"><span class="cwtv-live-dot"></span><span id="cwTvModuleLabel">CW TV</span> <span class="online-badge">LIVE 24/7</span></div>
+      <label class="switch"><input id="cwTvToggle" type="checkbox"><span></span></label>
+    </div>
+    <div id="cwTvPanel" class="cwtv-panel">
+      <a id="cwTvSidebarYoutube" class="action cwtv-youtube-btn" href="https://www.youtube.com/live/Bhd8-vvPzFc?si=jS4bK5VGadHEY_k_" target="_blank" rel="noopener noreferrer">▶ YouTube</a>
+    </div>
+  </div>
+
   <div class="profile-box"><div class="profile-title" data-i18n="operatorProfile">Indicativo</div><div class="profile-row"><input id="globalCall" type="text" maxlength="16" autocomplete="off" spellcheck="false" placeholder="Indicativo"><button id="globalCallSave" class="action" type="button" data-i18n="saveCall">Save</button></div><div class="profile-note" data-i18n="profileNote">Your operator identity across Morse Practice.</div></div>
   <div class="onair-box">
     <div class="onair-head"><div id="onAirLabel" class="onair-label"><span class="dot"></span>ON AIR <span class="online-badge">ONLINE</span></div><label class="switch"><input id="onAirToggle" type="checkbox"><span></span></label></div>
@@ -2283,16 +2293,7 @@ body:has(#visualAidToggle:not(:checked)) #errorsArenaCode{
   </div>
 
 
-  <div class="cwtv-box">
-    <div class="cwtv-head">
-      <div class="cwtv-label"><span class="cwtv-live-dot"></span><span id="cwTvModuleLabel">CW TV</span> <span class="online-badge">LIVE 24/7</span></div>
-      <label class="switch"><input id="cwTvToggle" type="checkbox"><span></span></label>
-    </div>
-    <div id="cwTvPanel" class="cwtv-panel">
-      <div id="cwTvPanelNote" class="cwtv-panel-note">Mirá CW ON TV en directo dentro de Morse Practice.</div>
-      <a id="cwTvSidebarYoutube" class="action cwtv-youtube-btn" href="https://www.youtube.com/live/Bhd8-vvPzFc?si=jS4bK5VGadHEY_k_" target="_blank" rel="noopener noreferrer">▶ YouTube</a>
-    </div>
-  </div>
+
 
 
   <div class="invaders-box">
@@ -6228,13 +6229,18 @@ const CW_TV_EMBED='https://www.youtube.com/embed/Bhd8-vvPzFc?autoplay=1&playsinl
 function cwTvApplyLang(){
   const es=lang==='es';
   const label=$("cwTvModuleLabel");if(label)label.textContent='CW TV';
-  const note=$("cwTvPanelNote");if(note)note.textContent=es
-    ?'Mirá CW ON TV en directo dentro de Morse Practice.'
-    :'Watch CW ON TV live inside Morse Practice.';
   const hud=$("cwTvLangHud");if(hud)hud.textContent=es?'CÓDIGO MORSE':'MORSE CODE';
   const cap=$("cwTvPlayerCaption");if(cap)cap.innerHTML=es
     ?'<strong>CW ON TV</strong> · Código Morse en directo 24/7'
     :'<strong>CW ON TV</strong> · Live Morse Code 24/7';
+}
+
+function cwTvModuleInstruction(){
+  activityInstruction(
+    'CW TV: escucha la señal en directo. Puedes practicar y transmitir CW mientras escuchas… prueba responder, copiar indicativos o seguir el ritmo de la transmisión.',
+    'CW TV: listen to the live signal. You can practice and transmit CW while listening… try replying, copying callsigns, or following the rhythm of the transmission.',
+    'cwtv'
+  );
 }
 
 function cwTvLoadPlayer(){
@@ -6252,6 +6258,7 @@ function forceCwTvOff(){
   const t=$("cwTvToggle");if(t)t.checked=false;
   $("cwTvPanel")?.classList.remove('open');
   activityArenaHide('cwtv');
+  clearActivityInstruction('cwtv');
   cwTvUnloadPlayer();
   syncTrainingLocks();
 }
@@ -6267,9 +6274,11 @@ function setupCwTv(){
       deactivate();
       activityArenaShow('cwtv');
       cwTvApplyLang();
+      cwTvModuleInstruction();
       cwTvLoadPlayer();
     }else{
       activityArenaHide('cwtv');
+      clearActivityInstruction('cwtv');
       cwTvUnloadPlayer();
     }
     syncTrainingLocks();
