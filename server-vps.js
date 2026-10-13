@@ -5,6 +5,10 @@ const PORT = Number(process.env.PORT || 10002);
 const pool = new Pool({ connectionString: process.env.DATABASE_URL });
 
 const RPC = {
+  cw_get_master_stats: {
+    args: []
+  },
+
   mp_get_stats: {
     args: []
   },
