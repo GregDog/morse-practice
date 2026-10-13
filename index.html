@@ -4387,19 +4387,21 @@ let lastPracticeActivity=0,practiceStatsDirty=false,usageStatsDirty=false;
 
 // Persistent community totals: Supabase/PostgreSQL.
 // MQTT remains unchanged for ON AIR, DUEL and leaderboards.
-const SUPABASE_STATS_URL='https://mdwmqgwgrsycelickpyj.supabase.co';
-const SUPABASE_STATS_KEY='sb_publishable_2Pg2V9qOlQaeHfZ2LAYIww_I3C_D0UV';
+const SUPABASE_STATS_URL = "https://practice-api.zp5dxs.org";
+const SUPABASE_STATS_KEY = "";
 
 const stableStatsState={loaded:false,loading:false,visitRecorded:false,syncTimer:0,last:null};
 function stableStatsConfigured(){
-  return /^https:\/\/[a-z0-9-]+\.supabase\.co$/i.test(SUPABASE_STATS_URL)
-    && SUPABASE_STATS_KEY
-    && !SUPABASE_STATS_KEY.includes('REPLACE_ME');
+  return /^https:\/\/practice-api\.zp5dxs\.org$/i.test(SUPABASE_STATS_URL);
 }
 function stableStatsCanWrite(){
   return stableStatsConfigured()
     && location.protocol==='https:'
-    && location.hostname.toLowerCase()==='zp5dxs.github.io';
+    && [
+      'zp5dxs.github.io',
+      'practice.zp5dxs.org',
+      'practice-api.zp5dxs.org'
+    ].includes(location.hostname.toLowerCase());
 }
 async function stableStatsRpc(name,args={}){
   if(!stableStatsConfigured())throw new Error('Supabase stats not configured');

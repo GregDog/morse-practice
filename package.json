@@ -1,0 +1,23 @@
+{
+  "name": "morse-practice",
+  "version": "1.0.0",
+  "description": "> **Free • Open Source • Browser-Based Morse Code Training Platform**",
+  "main": "server-vps.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZP5DXS/morse-practice.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZP5DXS/morse-practice/issues"
+  },
+  "homepage": "https://github.com/ZP5DXS/morse-practice#readme",
+  "dependencies": {
+    "pg": "^8.23.1"
+  }
+}
